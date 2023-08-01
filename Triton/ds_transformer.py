@@ -59,7 +59,7 @@ class DeepSpeedTransformerInference(nn.Module):
 
         self.mlp = TritonMLP(self.config)
 
-        device = get_accelerator().current_device_name()  # if config.bigscience_bloom else 'cpu'
+        device = get_accelerator().current_device_name()
         if self.config.set_empty_params:
             self.norm_w = None
             self.norm_b = None
